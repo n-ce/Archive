@@ -1,2 +1,2 @@
 # Archive
-Collection of my old repositories/projects from 2020-2021.
+Collection of my old repositories/micro projects from 2020-2021.
