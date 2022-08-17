@@ -1,0 +1,25 @@
+body{
+  height:97vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  transition: background-color 250ms ease-in-out;
+}
+div{
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  box-shadow: 0 0 1.75rem 1rem black;
+  background-image:radial-gradient(white,transparent,black 75% ),conic-gradient(violet,indigo,blue,green,yellow,orange,red,violet);
+  animation: spin 3s infinite linear; 
+  transition: background-image 250ms ease-in-out, box-shadow 250ms ease-in-out
+  }
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

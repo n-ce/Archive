@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "<button onclick=\"document.body.style.backgroundColor='blue';\">Google</button>"
+    },
+  {
+    "Name": "Bing"
+    },
+  {
+    "Name": "<li>DuckDuckGo</li>"
+    }
+]

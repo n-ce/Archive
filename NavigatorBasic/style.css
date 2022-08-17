@@ -1,0 +1,61 @@
+html{
+  height:100vh;
+  user-select: none;
+  animation: curtain 2s ease;
+  background-size: 2rem 2rem;
+  background-image:
+    linear-gradient(to right, #00000040 0.02rem, transparent 0.02rem),
+    linear-gradient(to bottom, #00000040 0.02rem, transparent 0.02rem);
+}
+
+html,body{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+b{
+  height:1rem;
+  width:1rem;
+  border: 0.1rem solid red;
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out;
+}
+
+footer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+}
+/*Responsive*/
+@media (orientation:landscape){body{width:100vh;}}
+/*Animations*/
+@keyframes curtain{
+  0%{background-color: black;}
+}
+h1,p,pre{animation:cool 1s;}
+
+@keyframes cool{0%{transform: translateX(-100vw);}}
+
+span{animation: flexy 1s;}
+
+@keyframes flexy{0%{transform: translateX(100vw)}}
+
+h4{animation: fade 2s infinite;}
+
+@keyframes fade{50%{transform: translateX(-0.5rem)}}
+/*Arrow Icon*/
+span {
+  margin: 1rem;
+  border: solid;
+  border-width:0 0.5rem 0.5rem 0;
+  padding: 0.5rem;
+}
+.right{transform: rotate(-45deg)}
+.left{transform: rotate(135deg);}
+.up {transform: rotate(-135deg);}
+.down {transform: rotate(45deg);}
+.upleft {transform: rotate(180deg);}
+.upright {transform: rotate(-90deg);}
+.downleft {transform: rotate(90deg);}
+.downright {transform: rotate(0deg);}

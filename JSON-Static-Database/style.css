@@ -1,0 +1,27 @@
+html,body,div{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body{
+  overflow: scroll;
+}
+
+button{
+  border: none;
+  margin: 1rem;
+  padding: 1rem;
+  user-select: none;
+}
+
+button:focus{
+  background: black;
+  color: white;
+}
+span{
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+}

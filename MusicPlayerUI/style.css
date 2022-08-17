@@ -1,0 +1,15 @@
+html{
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+body{
+  height:50%;
+  width:50%;
+  box-shadow: 0 0 1rem #F93;
+  border-radius: 1rem;
+  background: #F93 url("Play.webp") no-repeat center;
+  background-size: 25%;
+}

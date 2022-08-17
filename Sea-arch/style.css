@@ -1,0 +1,34 @@
+body{
+  height:97vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(-45deg, limegreen,cornflowerblue);
+  background-size:500% 500%;
+	animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+0% {background-position: 0% 50%;}
+50%{background-position: 100% 50%;}
+100% {background-position: 0% 50%;}
+}
+ul{
+  text-align:center;
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+}
+li{margin:0.5REM;}
+input{
+  margin-bottom:1REM;
+  border:0.1REM solid;
+  border-radius:1rem;
+  text-align:center;
+  padding :0.25REM;
+  background:transparent;
+  outline:none;
+  font-weight:bold;
+}
+input,body,::placeholder,input:focus{color:white}

@@ -1,0 +1,33 @@
+body{
+  height: 97vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width:80%;
+  height: 1rem;
+  border-radius: 2rem;
+  background: lightpink;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  -moz-transition:.2s;
+  -o-transition:.2s;
+  transition: opacity .2s;
+}
+input::hover{opacity: 1}
+input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  -moz-appearance:none;
+  appearance: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background:skyblue;
+}
+hr{height:1rem;width:70%}

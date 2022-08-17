@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap');
+
+html,body{
+  height: 100%;
+  margin:0;
+  overflow: none;
+}
+
+body,div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+p,input,button{
+  font-family: "Exo", monospace;
+  font-size: 1.5rem;
+  margin: 1rem;
+  border: none;
+}
+
+input{
+  text-align: center;
+  background: none;
+  outline: none;
+  box-shadow: 0 0.25rem #4F9;
+}
+
+button{
+  color: black;
+  background-color: #4F92;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #4F99;
+  user-select: none;
+}
+button:focus{
+  background-color: #4F9;
+}
+div,input{width: 90%;}
+
+@media (orientation:landscape){
+  div{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}

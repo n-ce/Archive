@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="skyblue">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Posting Page</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  
+  <h1>FORMIFY</h1>
+  
+  <form onsubmit="var i = document.querySelectorAll('input');i[2].value=i[0].value+i[1].value;" name="contact" method="POST" data-netlify="true">
+    
+    <h3><em>POST YOUR FORM HERE!</em></h3>
+    
+    <input type="text" name="Title" placeholder="Title" required/>
+    
+    <input type="url" name="url" placeholder="Link" required/>
+    
+    <input type="hidden" name="plus"></input>
+
+    <button type="submit">SUBMIT</button>
+    
+  </form>
+  
+</html>
