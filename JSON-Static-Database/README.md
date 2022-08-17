@@ -6,7 +6,7 @@ Parsing JSON into a HTML listed database structure
 - no need of having external html pages
 
 #### Stage 1 : Working Build ✅
-#### Stage 2 : Merging concept into [Sea-Arch](https://github.com/n-ce/Sea-arch) ✅
+#### Stage 2 : Merging concept into [Sea-Arch](../Sea-arch) ✅
 #### Stage 3 : Merging concept into [YTFLIX](https://github.com/n-ce/YTFLIX) ✅
 #### Stage 4 : Future Contribution and optimization. ✅
-#### Stage 5 : Integrating into [S.P.A.C.E](https://github.com/n-ce/SPACE)
+#### Stage 5 : Integrating into [S.P.A.C.E](https://github.com/n-ce/Bromage)
