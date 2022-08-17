@@ -3,8 +3,8 @@ RGB Sliders.
 
 The main project that combines
 
-- [Loader](https://github.com/n-ce/Loader) (PWA functionality)
+- [Loader](../RGBODY) (PWA functionality)
 
-- [HexaDexa](https://github.com/n-ce/HexaDexa) (Decimal conversion)
+- [HexaDexa](../HexaDexa) (Decimal conversion)
 
-- [HexSlider](https://github.com/n-ce/HexSlider) (Slider flexibility)
+- [HexSlider](../HexSlider) (Slider flexibility)
