@@ -1,0 +1,23 @@
+body,form{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: palevioletred;
+}
+#number,#email,#name{width:50vw;text-align: center;}
+label,h1,p{
+  background-color: #00000050;
+  color:white;
+  border-radius: 1vw;
+  padding: 1vw;
+  font-weight: bold;
+}
+body,input,label,select,textarea{
+  font-size: 5vw;
+  margin: 2vw;
+}
+@media screen and (orientation:landscape){
+  body,input,label,select,textarea{font-size: 5vh;}
+}

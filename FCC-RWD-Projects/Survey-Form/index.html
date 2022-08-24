@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <h1 id="title">Cyber Consent</h1>
+  
+  <p id="description">Rightfully and honestly fill up the survey to gain access as a internet user.</p>
+  
+  <form id="survey-form">
+    
+    <label for="name" id="name-label">NAME</label>
+    <input id="name" type="text" placeholder="Enter your name" required>
+    
+    <label for="email" id="email-label">EMAIL</label>
+    <input id="email" type="email" placeholder="Enter your email" required>
+    
+    <label for="number" id="number-label">NUMBER</label>
+    <input id="number" type="number" min="1" max="10" placeholder="Enter your number" required>
+   
+   <label for="dropdown">Are you a regular internet User?</label> 
+    <select name="dropdown" id="dropdown">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+    
+    <label for="Under18">Click here if you are Under 18</label>
+    <input type="radio" name="Restriction" id="Under18" value="Are you under 18?" />
+    
+    <label for="Over18">Click here if you are over 18</label>
+    <input type="radio" name="Restriction" id="Over18" value="Are you over 18?"/>
+    
+    <label for="Agree">Do you agree with our strict unreasonable policies?</label>
+    <input type="checkbox" name="Consent" id="Agree" value="Agree" />
+    
+    <label for="Agree">Do you support those who are affiliated to us?</label>
+    <input type="checkbox" name="Affiliation" id="Agree" value="Agree" />
+    
+    <label for="comments">Comment your survey experience</label>
+    <textarea name="comments" id="comments" placeholder="Comment Here"></textarea>
+    
+    <input type="submit" name="report" id="submit" value="Submit" />
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header{
+    background-color: black;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+    color: white;
+    align-items: center;
+  }
+  img,a{
+    height: 3rem;
+    margin: 1rem 1rem 1rem 5vw;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  iframe,h1,form{
+    width:75vw;
+    margin-bottom: 5vh;
+  }
+  @media (prefers-color-scheme: dark) {
+  body{background-color: #464646;}
+  h1{color:white}
+  }

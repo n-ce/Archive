@@ -1,0 +1,55 @@
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    color:white;
+  }
+  #navbar{
+  height:2rem;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  background-color: darkorange;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  }
+  #welcome-section{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index: 0;
+  }
+  h1{
+    font-size:4rem;
+    width: 100vw;
+    background-color:darkorange;
+  }
+  #projects{
+  }
+  a{text-decoration: none;
+    color:white;
+    font-weight: bold;
+  }
+  #github{height: 5rem;}
+  #logo{
+    margin-right: 1rem;
+    height:2rem;
+    border-radius: 50%;
+  }
+  .project-tile{
+    background-color: darkorange;
+  }
+  @media (prefers-color-scheme:dark){
+    body{
+      background-color: dimgrey;
+      color:white;
+    }
+    .project-tile,h1,#navbar{background-color: black}
+  }

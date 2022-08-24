@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+#main{background-color: wheat;font-family: 'PT Sans', sans-serif;}
+
+#title,#img-caption,li,hr{
+  color:white;
+  text-align: center;
+}
+
+ul,#img_info{
+  display: flex;
+  flex-direction: column;
+}
+
+#img-div{
+  background-color: #8B451375;
+  padding: 1vw 1vw 0 1vw;
+  margin: 5vw;
+}
+
+#image{display:block;max-width:100%;filter:sepia(200%)}
+
+ul{list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+
+li,a,#title{
+  background-color: #8B451375;
+  border-radius: 1vh;
+  margin:1vh;
+  padding:1vh;
+}
+
+a{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+hr{width:70vw; border-top: 1vw dotted #8B451375;}
+
+@media screen and (orientation:landscape){
+
+  #image,#img-caption{width:50vh;}
+
+  #img-div{margin:1vh;}
+
+  #img_info{flex-direction: row;}
+
+  ul,#img_info{align-items: left;}
+}
