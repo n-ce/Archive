@@ -14,21 +14,32 @@
 
     body {
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: auto;
     }
-    a{
-      border: 1px solid blue
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-color: #7788;
+      color: inherit;
+    }
+
+    .dark {
+      background-color: black;
+      color: white;
     }
   </style>
 </head>
 
 <body>
-<a href="/CaesarsCipher">Caesars Cipher</a>
-<a href="/CashRegister">Cash Register</a>
-<a href=""></a>
-<a href=""></a>
-<a href=""></a>
-<a href=""></a>
+  <a href="CaesarsCipher">Caesars Cipher</a>
+  <a href="CashRegister">Cash Register</a>
+  <a href="PalindromeChecker">Palindrome Checker</a>
+  <a href="RomanNumeralConverter">Roman Numeral Converter</a>
+  <a href="TelephoneNumberValidator">Telephone Number Validator</a>
+  <a onclick="document.body.classList.toggle('dark')">dark/light</a>
 </body>
 
 </html>
