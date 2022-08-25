@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <meta name="theme-color" content="cornflowerblue" />
-  <meta name = "viewport" content = "width=device-width, minimum-scale=1.0, maximum-scale = 1.0, maximum-scale =5">
-  <title>Random Number Generator</title>
-  <link rel="stylesheet" href="style.css" />
-  <body>
-    Shake Device or Click Anywhere.
-    <script src="script.js"></script>
-  </body>
+<html onclick="random()">
+<meta name="theme-color" content="cornflowerblue" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, maximum-scale =5">
+<title>Random Number Generator</title>
+<style>
+  html {
+    touch-action: none;
+    background-color: black;
+  }
+  body {
+    overflow-wrap: break-word;
+    font-size: 7rem;
+    color: cornflowerblue;
+    animation: fade 1s ease-in-out;
+    font-family: monospace;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: skewY(91deg) scale(2) translateY(100%);
+    }
+  }
+</style>
+
+<body>
+  Shake Device or Click Anywhere.
+  <script>
+    let random = () => {
+      document.body.innerText = Math.trunc(Math.random() * Math.pow(10, 1 / Math.random()));
+    }
+    window.addEventListener("devicemotion", (event) => {
+      if (event.accelerationIncludingGravity.x < -10) {
+        random();
+      }
+    }, true);
+  </script>
+</body>
+
 </html>

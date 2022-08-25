@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="theme-color" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" type="image/png" sizes="512x512" href="512px_icon.png"/>
-    <link rel="icon" type="image/png" sizes="192x192" href="192px_icon.png"/>
-    <link rel="manifest" href="manifest.json"/>
-    <link rel="stylesheet" href="style.css"/>
-  </head>
-  <body>
-    <script src="service-worker.js"></script>
-	</body>
+
+<head>
+  <meta name="theme-color" content="black">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" type="image/png" sizes="512x512" href="512px_icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="192px_icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    html {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    body {
+      border: 0.5rem solid;
+      border-radius: 50%;
+      border-top: 0.5rem solid skyblue;
+      width: 4rem;
+      height: 4rem;
+      animation: spin 750ms linear infinite;
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg)
+      }
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script src="service-worker.js"></script>
+</body>
+
 </html>

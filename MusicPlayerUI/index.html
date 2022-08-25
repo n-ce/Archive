@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MP UI</title>
-    <link rel="stylesheet" href="style.css"/>
-  </head>
-  <body>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MP UI</title>
+  <style>
+    html {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+    }
+
+    body {
+      height: 50%;
+      width: 50%;
+      box-shadow: 0 0 1rem #F93;
+      border-radius: 1rem;
+      background: #F93 url("Play.webp") no-repeat center;
+      background-size: 25%;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    var count = 0;
+    var sound = new Audio('Sound.mp3');
+    document.body.onclick = function() {
+      count++;
+      if (count % 2 == 1) {
+        this.style.backgroundImage = "url(Pause.webp)";
+        sound.play();
+      }
+      else {
+        this.style.backgroundImage = "url(Play.webp)";
+        sound.pause();
+      }
+    }
+  </script>
+</body>
+
 </html>

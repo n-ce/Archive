@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <title>HexSlider</title>
-  </head>
-  <body>
-    <div id="slider"></div>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" />
+  <title>HexSlider</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    body,
+    div {
+      transition: background-color 0.5s
+    }
+  </style>
+</head>
+
+<body>
+  <div id="slider"></div>
+  <script>
+    $("#slider").roundSlider({
+      width: 3,
+      handleSize: 25,
+      radius: 150,
+      showTooltip: true,
+      min: 0,
+      max: 16777215,
+      update: function() {
+        document.body.style.backgroundColor = document.getElementsByClassName("rs-bg-color")[0].style.backgroundColor = "#" + Number($("#slider").roundSlider("getValue")).toString(16);
+      }
+    });
+  </script>
+</body>
+
 </html>

@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="black" />
-    <link rel="stylesheet" href="style.css"/>
-    <title>Sphere</title>
-  </head>
-  <body>
-    <div></div>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="black" />
+  <title>Sphere</title>
+  <style>
+    :root {
+      --dynamic: black;
+    }
+
+    body {
+      height: 97vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--dynamic);
+      transition: background-color 250ms ease-in-out;
+    }
+
+    div {
+      height: 20rem;
+      width: 20rem;
+      border-radius: 50%;
+      box-shadow: 0 0 1.75rem 1rem var(--dynamic);
+      background-image: radial-gradient(white, transparent, var(--dynamic) 70%), conic-gradient(violet, indigo, blue, green, yellow, orange, red, violet);
+      animation: spin 1s infinite ease-out;
+      transition: all;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body onclick="document.documentElement.requestFullscreen()">
+  <div></div>
+  <script>
+    setInterval(() => {
+      let C = '#';
+      for (let i = 0; i < 6; i++)
+        C += "0123456789ABCDEF" [(Math.floor(Math.random() * 16))];
+      document.querySelector(':root').style.setProperty('--dynamic', C);
+      document.querySelector("meta[name=theme-color]").setAttribute("content", C);
+    }, 1000);
+  </script>
+</body>
+
 </html>
