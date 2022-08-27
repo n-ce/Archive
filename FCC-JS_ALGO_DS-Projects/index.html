@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#aaaaaa">
   <style>
     html,
     body {
@@ -17,29 +18,34 @@
       grid-template-columns: auto;
     }
 
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      background-color: #7788;
-      color: inherit;
-    }
-
-    .dark {
-      background-color: black;
-      color: white;
+    button {
+      border: none;
+      font-weight: bolder;
+      transition: all 250ms;
     }
   </style>
 </head>
 
 <body>
-  <a href="CaesarsCipher">Caesars Cipher</a>
-  <a href="CashRegister">Cash Register</a>
-  <a href="PalindromeChecker">Palindrome Checker</a>
-  <a href="RomanNumeralConverter">Roman Numeral Converter</a>
-  <a href="TelephoneNumberValidator">Telephone Number Validator</a>
-  <a onclick="document.body.classList.toggle('dark')">dark/light</a>
+  <button>Caesars Cipher</button>
+  <button>Cash Register</button>
+  <button>Palindrome Checker</button>
+  <button>Roman Numeral Converter</button>
+  <button>Telephone Number Validator</button>
+  <button onclick="theme()">dark/light</button>
+  <script>
+    const color = [['a', 'b', 'c', 'd', 'e', 'f'], ['0', '1', '2', '3', '4', '5']];
+    const b = document.getElementsByTagName('button');
+    const theme = () => {
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", '#' + color[0][0].repeat(3));
+      for (let i = 0; i < 6; i++) {
+        b[i].style.backgroundColor = '#' + color[0][i].repeat(3);
+        b[i].style.color = '#' + color[1][i].repeat(3);
+      }
+      color.reverse();
+    }
+    theme();
+  </script>
 </body>
 
 </html>
