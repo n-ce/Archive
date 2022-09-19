@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#E3F2FD">
+  <title>Counter</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      background-color: #BBDEFB;
+      font-family: monospace;
+    }
+    body,div{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    div {
+      height: 90vw;
+      width: 90vw;
+      background-color: #E3F2FD;
+      border-radius: 50%;
+      box-shadow: 0 0 0.5rem #0002;
+      animation: boot 1s ease-in-out;
+    }
+
+    button {
+      border: none;
+      padding: 1rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      background: #E3F2FD;
+      color: #002340;
+      border: 0.1rem solid white;
+    }
+
+    @media (orientation:landscape) {
+      div {
+        height: 90vh;
+        width: 90vh;
+      }
+    }
+
+    @media (orientation:portrait) {
+      body {
+        flex-direction: column;
+      }
+    }
+
+    @keyframes boot {
+      from {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+    
+    .stat {
+      animation: stat 0.3s;
+    }
+
+    .stop {
+      animation: stop 0.3s
+    }
+
+    @keyframes stat {
+      from {
+        transform: scale(0.9);
+        background: white;
+      }
+    }
+
+    @keyframes stop {
+      from {
+        background: white;
+        transform: scale(0.9);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>0</h1>
+  </div>
+  <button>START</button>
+  <script>
+    const button = document.querySelector('button');
+    let count = 0;
+    let interval;
+
+    button.addEventListener('click', () => {
+      if (button.innerText == 'START') {
+        interval = setInterval(() => {
+          document.querySelector('h1').innerText = count++
+        }, 1000);
+        button.classList.add('stat');
+        button.classList.remove('stop');
+        button.innerText = 'STOP';
+      }
+      else {
+        button.classList.add('stop');
+        button.classList.remove('stat');
+        clearInterval(interval);
+        button.innerText = 'START';
+      }
+
+    });
+  </script>
+</body>
+
+</html>
