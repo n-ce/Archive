@@ -37,7 +37,8 @@
   <script type="module">
     import palindrome from './palindrome.js';
     import roman from './roman.js';
-
+    import cipher from './cipher.js';
+    
     const color = [['a', 'b', 'c', 'd', 'e', 'f'], ['0', '1', '2', '3', '4', '5']];
     const button = document.querySelectorAll('button');
     const theme = () => {
@@ -53,6 +54,9 @@
     }
 
     theme();
+    
+    button[0].addEventListener('click', cipher);
+    
     button[2].addEventListener('click', palindrome);
     button[3].addEventListener('click', roman);
 
