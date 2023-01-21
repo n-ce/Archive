@@ -2,62 +2,64 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#aaaaaa">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#aaaaaa">
 </head>
 <style>
-	body {
-		height: 100dvh;
-		padding: 0;
-		margin: 0;
-		display: grid;
-	}
+  body {
+    height: 100dvh;
+    padding: 0;
+    margin: 0;
+    display: grid;
+  }
 
-	@media(orientation:landscape) {
-		body {
-			grid-template-columns: auto auto;
-		}
-	}
+  @media(orientation:landscape) {
+    body {
+      grid-template-columns: auto auto;
+    }
+  }
 
-	button {
-		border: none;
-		font-weight: bolder;
-		transition-duration: 250ms;
-	}
+  button {
+    border: none;
+    font-weight: bolder;
+    transition-duration: 250ms;
+  }
 </style>
 
 <body>
-	<button>Caesars Cipher</button>
-	<button>Cash Register</button>
-	<button>Palindrome Checker</button>
-	<button>Roman Numeral Converter</button>
-	<button>Telephone Number Validator</button>
-	<button>dark/light</button>
-	
-	<script type="module">
-		import palindrome from './palindrome.js';
+  <button>Caesars Cipher</button>
+  <button>Cash Register</button>
+  <button>Palindrome Checker</button>
+  <button>Roman Numeral Converter</button>
+  <button>Telephone Number Validator</button>
+  <button>dark/light</button>
+  <script type="module">
+    import palindrome from './palindrome.js';
+    import roman from './roman.js';
 
-		const color = [['a', 'b', 'c', 'd', 'e', 'f'], ['0', '1', '2', '3', '4', '5']];
-		const button = document.querySelectorAll('button');
-		const theme = () => {
-			
-			document.querySelector('meta[name="theme-color"]').setAttribute("content", '#' + color[0][0].repeat(3));
-		
-			for (let i = 0; i < 6; i++) {
-				button[i].style.backgroundColor = '#' + color[0][i].repeat(3);
-				button[i].style.color = '#' + color[1][i].repeat(3);
-			}
-			
-			color.reverse();
-		}
+    const color = [['a', 'b', 'c', 'd', 'e', 'f'], ['0', '1', '2', '3', '4', '5']];
+    const button = document.querySelectorAll('button');
+    const theme = () => {
 
-		theme();
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", '#' + color[0][0].repeat(3));
 
-		button[2].addEventListener('click', palindrome);
-		button[5].addEventListener('click', theme);
-	</script>
-	
+      for (let i = 0; i < 6; i++) {
+        button[i].style.backgroundColor = '#' + color[0][i].repeat(3);
+        button[i].style.color = '#' + color[1][i].repeat(3);
+      }
+
+      color.reverse();
+    }
+
+    theme();
+    button[2].addEventListener('click', palindrome);
+    button[3].addEventListener('click', roman);
+
+    button[5].addEventListener('click', theme);
+
+    
+  </script>
 </body>
 
 </html>
