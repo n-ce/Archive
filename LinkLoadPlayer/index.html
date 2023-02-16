@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Load Link Player</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      color: white;
+      font-family: monospace;
+    }
+
+    input {
+      width: 90%;
+    }
+
+    span {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 1rem;
+      font-weight: bolder;
+      font-size: 2rem;
+    }
+
+    button {
+      height: 2.5rem;
+      width: auto;
+      background-color: deepskyblue;
+      border: 0.1rem solid white;
+      color: inherit;
+      border-radius: 0.8rem;
+      font-size: 1.5rem;
+      font-family: inherit;
+      font-weight: bolder;
+      user-select: none;
+    }
+
+    button:active {
+      background-color: white;
+      color: deepskyblue;
+      border-color: deepskyblue;
+    }
+
+    button:disabled {
+      background-color: grey;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Link Load Player</h1>
+  <audio></audio>
+  <input type="range">
+  <span>
+    <p>00:00</p>&nbsp;/&nbsp;<p>00:00</p>
+  </span>
+  <span>
+    <button type="button">Load</button>
+    <button type="button" disabled>Play</button>
+    <button type="button" disabled>Pause</button>
+  </span>
+
+  <script>
+    const audio = document.getElementsByTagName('audio')[0];
+    const progress = document.getElementsByTagName('input')[0];
+    const btn = document.getElementsByTagName('button');
+    const [playbtn, pausebtn] = [btn[1], btn[2]];
+
+    const convertSStoMMSS = (seconds) => {
+      let mm = Math.floor(seconds / 60);
+      let ss = Math.floor(seconds % 60);
+      if (mm < 10) mm = `0${mm}`;
+      if (ss < 10) ss = `0${ss}`;
+      return `${mm}:${ss}`;
+    }
+
+    btn[0].addEventListener('click', () => {
+      audio.src = prompt('Please Enter Link');
+      playbtn.disabled = false;
+      pausebtn.disabled = false;
+    });
+    playbtn.addEventListener('click', () => {
+      audio.play();
+      playbtn.disabled = true;
+      pausebtn.disabled = false;
+    })
+    pausebtn.addEventListener('click', () => {
+      audio.pause();
+      pausebtn.disabled = true;
+      playbtn.disabled = false;
+    });
+
+    progress.addEventListener('change', () => {
+      if (progress.value < 0 || progress.value > audio.duration) {
+        return;
+      }
+      audio.currentTime = progress.value;
+      progress.blur();
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (progress === document.activeElement) return;
+
+      progress.value = Math.floor(audio.currentTime);
+      document.getElementsByTagName('p')[0].innerText = convertSStoMMSS(audio.currentTime);
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+      progress.value = 0;
+      progress.min = 0;
+      progress.max = Math.floor(audio.duration);
+      document.getElementsByTagName('p')[1].innerText = convertSStoMMSS(audio.duration);
+    });
+  </script>
+</body>
+
+</html>
