@@ -38,6 +38,7 @@
     import palindrome from './palindrome.js';
     import roman from './roman.js';
     import cipher from './cipher.js';
+    import cashRegister from './cashRegister.js';
     
     const color = [['a', 'b', 'c', 'd', 'e', 'f'], ['0', '1', '2', '3', '4', '5']];
     const button = document.querySelectorAll('button');
@@ -56,7 +57,7 @@
     theme();
     
     button[0].addEventListener('click', cipher);
-    
+    button[1].addEventListener('click', cashRegister);   
     button[2].addEventListener('click', palindrome);
     button[3].addEventListener('click', roman);
     button[4].addEventListener('click', async () => {alert(/^(1\s?)?(\d{3}|\(\d{3}\))[\-\s]?\d{3}[\-\s]?\d{4}$/.test(await prompt("Enter the telephone number")))});
