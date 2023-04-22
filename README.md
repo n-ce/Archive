@@ -20,4 +20,5 @@ Collection of my old repositories/micro projects from 2020-2021-2022.
 1. [FreeCodeCamp Responsive Web Design Projects](https://n-ce.github.io/Archive/FCC-RWD-Projects/)
 1. [FreeCodeCamp JS Algorithms and DS Projects](https://n-ce.github.io/Archive/FCC-JS_ALGO_DS-Projects/)
 1. [Counter](https://n-ce.github.io/Archive/Counter)
+1. [FullScreen Site Redirector](https://n-ce.github.io/Archive/FullScreenSiteRedirector)
 1. [LinkLoadPlayer](https://n-ce.github.io/Archive/LinkLoadPlayer)
