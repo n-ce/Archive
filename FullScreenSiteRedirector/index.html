@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Animesh Nath">
+  <meta name="keywords" content="fullscreen, website, redirector,pwa,webapp">
+  <title>Full Screen Site Redirector</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    iframe {
+      display: none;
+      border: none;
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="url" placeholder="enter URL here" />
+  <iframe></iframe>
+  <script>
+    const input = document.querySelector("input");
+    const iframe = document.querySelector("iframe");
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        iframe.style.display = "flex";
+        iframe.src = input.value;
+        input.style.display = "none";
+        document.documentElement.requestFullscreen();
+      }
+    });
+  </script>
+</body>
+
+</html>
